@@ -1,5 +1,5 @@
 # Ignore binary files
-bin/*
+bin/
 
 # Ignore CMake files
 CMakeCache.txt
@@ -8,5 +8,6 @@ cmake_install.cmake
 Makefile
 
 # Ignore library and include files
-libs/*
-include/*
+libs/*.so
+libs/*.dll
+include/irrlicht/*
