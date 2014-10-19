@@ -4,15 +4,14 @@ CastleTour
 This repo is a combination of a few Irrlicht tutorials.
 
 ### Compiling
-So far I'm using CMake (and only on Debian GNU/Linux). First, compile Irrlicht, move the include and library files to the [include directory](/include) and the [library directory](/libs) (make sure they are named ```libIrrlicht.so``` if you're running Linux and ```libIrrlicht.dll``` if you're running Windows). Then run the following commands from the root directory of the project:
+The [Makefile](/Makefile) for this project is so far only for Debian Linux (it's all I can test it on). Please make sure you have all the necessary libraries, make sure that Irrlicht is in your _LD Path_, and also make sure you have the __clang++ compiler__ installed. Then, simply run the following:
 ```
-$ cmake .
 $ make
 ```
 The binary should be in the ```bin``` directory.
 
 ### Contributing
-Feel free to add. This is something I'm using to learn Irrlicht, and it would help if I had a better [CMakeLists](/CMakeLists.txt) file that could compile on multiple platforms.
+Feel free to add. This is something I'm using to learn Irrlicht, and it would help if I had a better [Makefile](/Makefile) file that could compile on multiple platforms.
 
 ### License
-Since this really isn't my code but Irrlicht code I placed it under the [Unlicense](/LICENSE), because kind of like a tutorial.
+Since this really isn't my code but a combination of multiple Irrlicht tutorials, I have licensed this project under the [Unlicense](/LICENSE), because it's kind of like a tutorial.
