@@ -1,0 +1,12 @@
+# Ignore binary files
+bin/*
+
+# Ignore CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Ignore library and include files
+libs/*
+include/*
