@@ -5,12 +5,6 @@
 
 using namespace irr;
 
-enum {
-	ID_IsNotPickable = 0,
-	IDFlag_IsPickable = 1 << 0,
-	IDFlag_IsHighlightable = 1 << 1
-};
-
 int main() {
 	// Choose driver
 	video::E_DRIVER_TYPE driverType = driverChoiceConsole();
@@ -32,7 +26,7 @@ int main() {
 	scene::IMeshSceneNode *mapnode = 0;
 
 	if(mapmesh) {
-		mapnode = smgr->addOctreeSceneNode(mapmesh->getMesh(0), 0, IDFlag_IsPickable);
+		mapnode = smgr->addOctreeSceneNode(mapmesh->getMesh(0));
 	}
 	scene::ITriangleSelector *tselector = 0;
 	if(mapnode) {
@@ -54,7 +48,7 @@ int main() {
 	keyMap[4].Action = EKA_JUMP_UP;
 	keyMap[4].KeyCode = KEY_SPACE;
 
-	scene::ICameraSceneNode *cam = smgr->addCameraSceneNodeFPS(0, 100.0f, .3f, ID_IsNotPickable, keyMap, sizeof(keyMap) / sizeof(*keyMap), true, 3.0f);
+	scene::ICameraSceneNode *cam = smgr->addCameraSceneNodeFPS(0, 100.0f, .3f, -1, keyMap, sizeof(keyMap) / sizeof(*keyMap), true, 3.0f);
 	cam->setPosition(core::vector3df(50, 50, -60));
 	cam->setTarget(core::vector3df(-70, 30, -60));
 
