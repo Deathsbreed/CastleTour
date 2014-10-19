@@ -9,7 +9,7 @@ So far I'm using CMake (and only on Debian GNU/Linux). First, compile Irrlicht, 
 $ cmake .
 $ make
 ```
-The binary should be in the [binary directory](/bin).
+The binary should be in the ```bin``` directory.
 
 ### Contributing
 Feel free to add. This is something I'm using to learn Irrlicht, and it would help if I had a better [CMakeLists](/CMakeLists.txt) file that could compile on multiple platforms.
