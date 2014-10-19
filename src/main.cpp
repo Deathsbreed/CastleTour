@@ -18,7 +18,7 @@ int main() {
 
 	EventReceiver eventReceiver;
 
-	IrrlichtDevice *device = createDevice(driverType, core::dimension2d<u32>(800, 600), 32, true, false, false, &eventReceiver);
+	IrrlichtDevice *device = createDevice(driverType, core::dimension2d<u32>(1280, 720), 32, true, false, false, &eventReceiver);
 	if(device == 0) return 1;
 
 	video::IVideoDriver *driver = device->getVideoDriver();
