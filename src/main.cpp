@@ -25,7 +25,7 @@ int main() {
 	scene::ISceneManager *smgr = device->getSceneManager();
 	gui::IGUIEnvironment *guienv = device->getGUIEnvironment();
 
-	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse Left Shift to crouch\nUse ESC to exit", core::rect<s32>(30, 30, 120, 75), false, false, 0, -1, true);
+	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse ESC to exit", core::rect<s32>(30, 30, 120, 65), false, false, 0, -1, true);
 
 	device->getFileSystem()->addFileArchive("../res/map-20kdm2.pk3");
 	scene::IAnimatedMesh *mapmesh = smgr->getMesh("20kdm2.bsp");
@@ -53,10 +53,8 @@ int main() {
 	keyMap[3].KeyCode = KEY_KEY_D;
 	keyMap[4].Action = EKA_JUMP_UP;
 	keyMap[4].KeyCode = KEY_SPACE;
-	keyMap[5].Action = EKA_CROUCH;
-	keyMap[5].KeyCode = KEY_LSHIFT;
 
-	scene::ICameraSceneNode *cam = smgr->addCameraSceneNodeFPS(0, 100.0f, .3f, ID_IsNotPickable, keyMap, 6, true, 3.0f);
+	scene::ICameraSceneNode *cam = smgr->addCameraSceneNodeFPS(0, 100.0f, .3f, ID_IsNotPickable, keyMap, sizeof(keyMap) / sizeof(*keyMap), true, 3.0f);
 	cam->setPosition(core::vector3df(50, 50, -60));
 	cam->setTarget(core::vector3df(-70, 30, -60));
 
