@@ -14,7 +14,7 @@ int main() {
 	EventReceiver eventReceiver;
 
 	// Create the device we'll be using
-	IrrlichtDevice *device = createDevice(driverType, core::dimension2d<u32>(1280, 720), 32, true, false, false, &eventReceiver);
+	IrrlichtDevice *device = createDevice(driverType, core::dimension2d<u32>(1280, 720), 32, false, false, false, &eventReceiver);
 	if(device == 0) return 1;
 
 	// Create other variables we'll need
@@ -23,7 +23,7 @@ int main() {
 	gui::IGUIEnvironment *guienv = device->getGUIEnvironment();
 
 	// Add text to game
-	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse R to reset\nUse ESC to exit", core::rect<s32>(30, 30, 120, 72), false, false, 0, -1, true);
+	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse R to reset\nUse ESC or Q to exit", core::rect<s32>(30, 30, 120, 72), false, false, 0, -1, true);
 
 	// Load map
 	device->getFileSystem()->addFileArchive("../res/map-20kdm2.pk3");
@@ -83,7 +83,7 @@ int main() {
 		// End the scene
 		driver->endScene();
 		// Check for ESC key
-		if(eventReceiver.IsKeyDown(KEY_ESCAPE)) {
+		if(eventReceiver.IsKeyDown(KEY_ESCAPE) || eventReceiver.IsKeyDown(KEY_KEY_Q)) {
 			device->closeDevice();
 		}
 		if(eventReceiver.IsKeyDown(KEY_KEY_R)) {
