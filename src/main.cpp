@@ -23,7 +23,7 @@ int main() {
 	gui::IGUIEnvironment *guienv = device->getGUIEnvironment();
 
 	// Add text to game
-	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse ESC to exit", core::rect<s32>(30, 30, 120, 65), false, false, 0, -1, true);
+	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse R to reset\nUse ESC to exit", core::rect<s32>(30, 30, 120, 72), false, false, 0, -1, true);
 
 	// Load map
 	device->getFileSystem()->addFileArchive("../res/map-20kdm2.pk3");
@@ -85,6 +85,10 @@ int main() {
 		// Check for ESC key
 		if(eventReceiver.IsKeyDown(KEY_ESCAPE)) {
 			device->closeDevice();
+		}
+		if(eventReceiver.IsKeyDown(KEY_KEY_R)) {
+			cam->setPosition(core::vector3df(50, 50, -60));
+		        cam->setTarget(core::vector3df(-70, 30, -60));
 		}
 
 		// Print FPS

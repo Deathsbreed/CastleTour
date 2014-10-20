@@ -8,11 +8,15 @@ MV=mv
 MKDIR=mkdir -p
 RM=rm -rf
 
-main:
+SRC_FILES := $(wildcard src/*.cpp)
+OBJ_FILES := $(addprefix src/, $(notdir $(SRC_FILES:.cpp=.o)))
+
+all: $(OBJ_FILES)
 	$(MKDIR) bin
-	$(CXX) $(INCLUDES) -c -o src/main.o src/main.cpp
-	$(CXX) $(INCLUDES) -c -o src/eventReceiver.o src/eventReceiver.cpp
-	$(CXX) $(LIBS) -o bin/castletour src/*.o
+	$(CXX) $(CXXFLAGS) $(LIBS) -o bin/castletour src/*.o
+
+src/%.o: src/%.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -o $@ $<
 
 clean:
 	$(RM) src/*.o
