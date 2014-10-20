@@ -2,7 +2,7 @@ CXX=clang++
 CXXFLAGS= -O3 -Wall
 
 INCLUDES= -Iinclude/irrlicht
-LIBS= -lIrrlicht -lX11 -lGL
+LIBS= -lIrrlicht -lGL -lGLU -lXrandr -lXext -lX11
 
 MV=mv
 MKDIR=mkdir -p
