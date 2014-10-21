@@ -20,4 +20,6 @@ src/%.o: src/%.cpp
 
 clean:
 	$(RM) src/*.o
+
+fullclean: clean
 	$(RM) bin
