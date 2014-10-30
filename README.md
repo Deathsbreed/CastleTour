@@ -5,7 +5,7 @@ This repo is a combination of a few Irrlicht tutorials.
 
 ### Compiling
 The [Makefile](/Makefile) for this project is so far only for Debian Linux (it's all I can test it on). Please make sure you have all the necessary libraries, make sure that Irrlicht is in your _LD Path_, and also make sure you have the __clang++ compiler__ installed. Then, simply run the following:
-```
+```bash
 $ make
 ```
 The binary should be in the ```bin``` directory.
