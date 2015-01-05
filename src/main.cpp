@@ -1,6 +1,6 @@
 #include <iostream>
-#include <irrlicht.h>
-#include "driverChoice.h"
+#include <irrlicht/irrlicht.h>
+#include <irrlicht/driverChoice.h>
 #include "eventReceiver.h"
 
 using namespace irr;
