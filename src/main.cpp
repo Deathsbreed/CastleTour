@@ -26,7 +26,7 @@ int main() {
 	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse R to reset\nUse ESC or Q to exit", core::rect<s32>(30, 30, 120, 72), false, false, 0, -1, true);
 
 	// Load map
-	device->getFileSystem()->addFileArchive("../res/map-20kdm2.pk3");
+	device->getFileSystem()->addFileArchive("../assets/map-20kdm2.pk3");
 	scene::IAnimatedMesh *mapmesh = smgr->getMesh("20kdm2.bsp");
 	scene::IMeshSceneNode *mapnode = 0;
 
@@ -76,7 +76,7 @@ int main() {
 
 	while(device->run()) {
 		// Begin the scene
-		driver->beginScene(true, true, video::SColor(0, 255, 101, 255));
+		driver->beginScene(true, true, video::SColor(50, 50, 255, 255));
 		// Draw
 		smgr->drawAll();
 		guienv->drawAll();
@@ -88,7 +88,7 @@ int main() {
 		}
 		if(eventReceiver.IsKeyDown(KEY_KEY_R)) {
 			cam->setPosition(core::vector3df(50, 50, -60));
-		        cam->setTarget(core::vector3df(-70, 30, -60));
+			cam->setTarget(core::vector3df(-70, 30, -60));
 		}
 
 		// Print FPS

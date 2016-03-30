@@ -5,9 +5,10 @@ find_path(IRRLICHT_INCLUDE_DIR irrlicht/irrlicht.h
 
 message(STATUS "IRRLICHT_INCLUDE_DIR = ${IRRLICHT_INCLUDE_DIR}")
 
-find_library(IRRLICHT_LIBRARY NAMES Irrlicht
+find_library(IRRLICHT_LIBRARY NAMES libIrrlicht.so
 	PATHS $ENV{IRRDIR}/lib
 )
+
 
 message(STATUS "IRRLICHT_LIBRARY = ${IRRLICHT_LIBRARY}")
 
