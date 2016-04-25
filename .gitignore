@@ -4,5 +4,5 @@ CMakeCache.txt
 cmake_install.cmake
 Makefile
 
-# Ignore binary files
-bin/
+# Ignore the binary
+CastleTour

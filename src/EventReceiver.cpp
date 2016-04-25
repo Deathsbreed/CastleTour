@@ -1,4 +1,4 @@
-#include "eventReceiver.h"
+#include "EventReceiver.hpp"
 
 // Initialize
 EventReceiver::EventReceiver() {

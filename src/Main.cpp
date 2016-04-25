@@ -1,7 +1,7 @@
 #include <iostream>
 #include <irrlicht/irrlicht.h>
 #include <irrlicht/driverChoice.h>
-#include "eventReceiver.h"
+#include "EventReceiver.hpp"
 
 using namespace irr;
 
@@ -14,7 +14,7 @@ int main() {
 	EventReceiver eventReceiver;
 
 	// Create the device we'll be using
-	IrrlichtDevice *device = createDevice(driverType, core::dimension2d<u32>(1280, 720), 32, false, false, false, &eventReceiver);
+	IrrlichtDevice *device = createDevice(driverType, core::dimension2d<u32>(800, 600), 32, false, false, false, &eventReceiver);
 	if(device == 0) return 1;
 
 	// Create other variables we'll need
@@ -26,7 +26,7 @@ int main() {
 	guienv->addStaticText(L"Use WASD to move\nUse SPACE to jump\nUse R to reset\nUse ESC or Q to exit", core::rect<s32>(30, 30, 120, 72), false, false, 0, -1, true);
 
 	// Load map
-	device->getFileSystem()->addFileArchive("../assets/map-20kdm2.pk3");
+	device->getFileSystem()->addFileArchive("assets/map-20kdm2.pk3");
 	scene::IAnimatedMesh *mapmesh = smgr->getMesh("20kdm2.bsp");
 	scene::IMeshSceneNode *mapnode = 0;
 
